@@ -23,33 +23,49 @@
           name: "Ahmed",
           age: 27,
         };
-        handleClick = (e) => {
-          // console.log(e.target);
-          // console.log(this.state);
-          // to change the state
+        // handleClick = (e) => {
+        //   // console.log(e.target);
+        //   // console.log(this.state);
+        //   // to change the state
 
+        //   this.setState({
+        //     name: "Omar",
+        //     age: 20,
+        //   });
+        //   console.log(this.state);
+        // };
+        // handleMouseOver = (e) => {
+        //   console.log(e.target, e.pageX);
+        // };
+        // handelCopy = (e) => {
+        //   console.log("Select this Paragraph");
+        // };
+
+        //  <button onClick={this.handleClick}>Click Me</button>
+        //     <button onMouseOver={this.handleMouseOver}>Hover Me</button>
+        //     <p onCopy={this.handelCopy}>Select this Paragraph</p>
+        // <p>
+        //     My Name is {this.state.name} and I am {this.state.age}
+        //   </p>
+
+        handleChange = (e) => {
           this.setState({
-            name: "Omar",
-            age: 20,
+            name: e.target.value,
           });
-          console.log(this.state);
         };
-        handleMouseOver = (e) => {
-          console.log(e.target, e.pageX);
-        };
-        handelCopy = (e) => {
-          console.log("Select this Paragraph");
+        handleSubmit = (e) => {
+          e.preventDefault();
+          console.log(this.state.name);
         };
         render() {
           return (
             <div className="app-content">
-              <h2>Hello ,Ahmed</h2>
-              <p>
-                My Name is {this.state.name} and I am {this.state.age}
-              </p>
-              <button onClick={this.handleClick}>Click Me</button>
-              <button onMouseOver={this.handleMouseOver}>Hover Me</button>
-              <p onCopy={this.handelCopy}>Select this Paragraph</p>
+              <h2>Hello ,{this.state.name}</h2>
+
+              <form onSubmit={this.handleSubmit}>
+                <input type="text" onChange={this.handleChange} />
+                <button>Submit</button>
+              </form>
             </div>
           );
         }
