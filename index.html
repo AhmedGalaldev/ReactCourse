@@ -23,6 +23,15 @@
           name: "Ahmed",
           age: 27,
         };
+        handleClick(e) {
+          console.log(e.target);
+        }
+        handleMouseOver(e) {
+          console.log(e.target, e.pageX);
+        }
+        handelCopy(e) {
+          console.log("Select this Paragraph");
+        }
         render() {
           return (
             <div className="app-content">
@@ -30,6 +39,9 @@
               <p>
                 My Name is {this.state.name} and I am {this.state.age}
               </p>
+              <button onClick={this.handleClick}>Click Me</button>
+              <button onMouseOver={this.handleMouseOver}>Hover Me</button>
+              <p onCopy={this.handelCopy}>Select this Paragraph</p>
             </div>
           );
         }
