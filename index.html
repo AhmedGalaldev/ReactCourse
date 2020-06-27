@@ -23,15 +23,23 @@
           name: "Ahmed",
           age: 27,
         };
-        handleClick(e) {
-          console.log(e.target);
-        }
-        handleMouseOver(e) {
+        handleClick = (e) => {
+          // console.log(e.target);
+          // console.log(this.state);
+          // to change the state
+
+          this.setState({
+            name: "Omar",
+            age: 20,
+          });
+          console.log(this.state);
+        };
+        handleMouseOver = (e) => {
           console.log(e.target, e.pageX);
-        }
-        handelCopy(e) {
+        };
+        handelCopy = (e) => {
           console.log("Select this Paragraph");
-        }
+        };
         render() {
           return (
             <div className="app-content">
